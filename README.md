@@ -18,7 +18,7 @@ To configure and utilize this Opspack, you simply need to add the 'OPSPACK NAME'
 
 Step 1: Add the host template
 
-Step 2: DESCRIBE ANY VARIABLES REQUIRED
+Step 2: Add and configure variables required for this host
 
 Step 3: Reload and the system will now be monitored
 
