@@ -10,36 +10,30 @@ cd $(1)/plugins && \
 rm *.go
 endef
 
-# CDs to an opspack's plugins directory, pre-processes the ps1 sources and shouts the list of executables
-define ps1_preprocess
-$(foreach f,$(call ps1_sources,$(1)),$(call ps1_preprocess_file,$(f)))
-endef
-
-# Gets the .ps1 sources for an opspack. Suppresses errors for missing /plugins dirs.
-define ps1_sources
-$(shell find $(1)/plugins -name '*.ps1' -and \( -type f -or -type l \) 2>/dev/null || true)
-endef
-
-# Runs the ps1 preprocess script for the given file
-define ps1_preprocess_file
-${CWD}/utils/ps1-preprocess.pl $(1)
-endef
-
 define view_files
 ls -l
+endef
+
+#Uses govendor tool to add all depencies into vendor.json (for .go files only)
+define govendor
+go get -u github.com/kardianos/govendor && \
+cd $(GOPATH)/src && \
+govendor init && \
+govendor sync && \
+govendor add +external && \
+govendor fetch +missing && \
+govendor list
 endef
 
 view_directory:
 	ls -l
 
 create_opspack:
-	go get github.com/opsview/go-plugin
+	$(call govendor) || $(call view_files)
 
 	$(call build_go_sources,$$OPSPACK_NAME) || $(call view_files)
 
 	$(call remove_go_sources,$$OPSPACK_NAME) || $(call view_files)
-
-#	$(call ps1_preprocess,$$OPSPACK_NAME) || $(call view_files) TODO
 
 	ls -l $$OPSPACK_NAME/plugins
 	tar -zcvf $$OPSPACK_NAME.opspack $$OPSPACK_NAME

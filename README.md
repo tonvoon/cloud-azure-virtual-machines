@@ -1,10 +1,10 @@
-[![Build Status](https://travis-ci.org/GBedenko/Opspack-Template.svg?branch=master)](https://travis-ci.org/GBedenko/Opspack-Template)
+[![Build Status](https://travis-ci.org/opsview/Opspack-Template.svg?branch=master)](https://travis-ci.org/opsview/Opspack-Template)
 
 # Opspack Template
 
 DESCRIPTION OF THE TECHNOLOGY MONITORED
 
-## Service Checks 
+## Service Checks
 
 | Service Check | Description |
 |:------------- |:----------- |
