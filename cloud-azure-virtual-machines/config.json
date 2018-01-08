@@ -1,0 +1,401 @@
+{
+   "attribute" : [
+      {
+         "arg1" : "",
+         "arg2" : "",
+         "arg4" : "",
+         "label1" : "Subscription ID",
+         "label2" : "Client ID",
+         "label3" : "Secret Key",
+         "label4" : "Tenant ID",
+         "name" : "AZURE_CREDENTIALS",
+         "secured1" : "0",
+         "secured2" : "0",
+         "secured3" : "1",
+         "secured4" : "0",
+         "value" : "Resource Group"
+      }
+   ],
+   "hosttemplate" : [
+      {
+         "description" : "Monitor the virtual machines running on Azure",
+         "has_icon" : "0",
+         "managementurls" : [],
+         "name" : "Cloud - Azure - Virtual Machines",
+         "servicechecks" : [
+            {
+               "event_handler" : null,
+               "exception" : null,
+               "name" : "Azure - VM - Bytes Read",
+               "timed_exception" : null
+            },
+            {
+               "event_handler" : null,
+               "exception" : null,
+               "name" : "Azure - VM - Bytes Read Operations",
+               "timed_exception" : null
+            },
+            {
+               "event_handler" : null,
+               "exception" : null,
+               "name" : "Azure - VM - Bytes Write Operations",
+               "timed_exception" : null
+            },
+            {
+               "event_handler" : null,
+               "exception" : null,
+               "name" : "Azure - VM - Bytes Written",
+               "timed_exception" : null
+            },
+            {
+               "event_handler" : null,
+               "exception" : null,
+               "name" : "Azure - VM - Network In",
+               "timed_exception" : null
+            },
+            {
+               "event_handler" : null,
+               "exception" : null,
+               "name" : "Azure - VM - Network Out",
+               "timed_exception" : null
+            },
+            {
+               "event_handler" : null,
+               "exception" : null,
+               "name" : "Azure - VM - Percentage CPU",
+               "timed_exception" : null
+            }
+         ]
+      }
+   ],
+   "keyword" : [],
+   "servicecheck" : [
+      {
+         "alert_from_failure" : "1",
+         "args" : "-H $HOSTADDRESS$ -m VM.BytesRead -r '%AZURE_CREDENTIALS%' -s '%AZURE_CREDENTIALS:1%' -C '%AZURE_CREDENTIALS:2%' -S '%AZURE_CREDENTIALS:3%' -t '%AZURE_CREDENTIALS:4%'",
+         "attribute" : null,
+         "calculate_rate" : "no",
+         "cascaded_from" : null,
+         "check_attempts" : "3",
+         "check_freshness" : "0",
+         "check_interval" : "300",
+         "checktype" : {
+            "name" : "Active Plugin"
+         },
+         "critical_comparison" : null,
+         "critical_value" : null,
+         "dependencies" : [],
+         "description" : "The number of bytes read by the VM",
+         "event_handler" : "",
+         "event_handler_always_exec" : "0",
+         "flap_detection_enabled" : "1",
+         "freshness_type" : "renotify",
+         "invertresults" : "0",
+         "keywords" : [],
+         "label" : null,
+         "level" : 0,
+         "markdown_filter" : "0",
+         "name" : "Azure - VM - Bytes Read",
+         "notification_interval" : null,
+         "notification_options" : "w,c,r,u,f",
+         "oid" : null,
+         "plugin" : {
+            "name" : "check_azure.py"
+         },
+         "retry_check_interval" : "60",
+         "sensitive_arguments" : "1",
+         "servicegroup" : {
+            "name" : "Cloud - Azure - Virtual Machines"
+         },
+         "snmptraprules" : [],
+         "stale_state" : "0",
+         "stale_text" : "",
+         "stale_threshold_seconds" : "3600",
+         "stalking" : "",
+         "volatile" : "0",
+         "warning_comparison" : null,
+         "warning_value" : null
+      },
+      {
+         "alert_from_failure" : "1",
+         "args" : "-H $HOSTADDRESS$ -m VM.ReadOperations -r '%AZURE_CREDENTIALS%' -s '%AZURE_CREDENTIALS:1%' -C '%AZURE_CREDENTIALS:2%' -S '%AZURE_CREDENTIALS:3%' -t '%AZURE_CREDENTIALS:4%'",
+         "attribute" : null,
+         "calculate_rate" : "no",
+         "cascaded_from" : null,
+         "check_attempts" : "3",
+         "check_freshness" : "0",
+         "check_interval" : "300",
+         "checktype" : {
+            "name" : "Active Plugin"
+         },
+         "critical_comparison" : null,
+         "critical_value" : null,
+         "dependencies" : [],
+         "description" : "The number of bytes read operations by the VM per second",
+         "event_handler" : "",
+         "event_handler_always_exec" : "0",
+         "flap_detection_enabled" : "1",
+         "freshness_type" : "renotify",
+         "invertresults" : "0",
+         "keywords" : [],
+         "label" : null,
+         "level" : 0,
+         "markdown_filter" : "0",
+         "name" : "Azure - VM - Bytes Read Operations",
+         "notification_interval" : null,
+         "notification_options" : "w,c,r,u,f",
+         "oid" : null,
+         "plugin" : {
+            "name" : "check_azure.py"
+         },
+         "retry_check_interval" : "60",
+         "sensitive_arguments" : "1",
+         "servicegroup" : {
+            "name" : "Cloud - Azure - Virtual Machines"
+         },
+         "snmptraprules" : [],
+         "stale_state" : "0",
+         "stale_text" : "",
+         "stale_threshold_seconds" : "3600",
+         "stalking" : "",
+         "volatile" : "0",
+         "warning_comparison" : null,
+         "warning_value" : null
+      },
+      {
+         "alert_from_failure" : "1",
+         "args" : "-H $HOSTADDRESS$ -m VM.WriteOperations -r '%AZURE_CREDENTIALS%' -s '%AZURE_CREDENTIALS:1%' -C '%AZURE_CREDENTIALS:2%' -S '%AZURE_CREDENTIALS:3%' -t '%AZURE_CREDENTIALS:4%'",
+         "attribute" : null,
+         "calculate_rate" : "no",
+         "cascaded_from" : null,
+         "check_attempts" : "3",
+         "check_freshness" : "0",
+         "check_interval" : "300",
+         "checktype" : {
+            "name" : "Active Plugin"
+         },
+         "critical_comparison" : null,
+         "critical_value" : null,
+         "dependencies" : [],
+         "description" : "The number of bytes write operations by the VM per second",
+         "event_handler" : "",
+         "event_handler_always_exec" : "0",
+         "flap_detection_enabled" : "1",
+         "freshness_type" : "renotify",
+         "invertresults" : "0",
+         "keywords" : [],
+         "label" : null,
+         "level" : 0,
+         "markdown_filter" : "0",
+         "name" : "Azure - VM - Bytes Write Operations",
+         "notification_interval" : null,
+         "notification_options" : "w,c,r,u,f",
+         "oid" : null,
+         "plugin" : {
+            "name" : "check_azure.py"
+         },
+         "retry_check_interval" : "60",
+         "sensitive_arguments" : "1",
+         "servicegroup" : {
+            "name" : "Cloud - Azure - Virtual Machines"
+         },
+         "snmptraprules" : [],
+         "stale_state" : "0",
+         "stale_text" : "",
+         "stale_threshold_seconds" : "3600",
+         "stalking" : "",
+         "volatile" : "0",
+         "warning_comparison" : null,
+         "warning_value" : null
+      },
+      {
+         "alert_from_failure" : "1",
+         "args" : "-H $HOSTADDRESS$ -m VM.BytesWritten -r '%AZURE_CREDENTIALS%' -s '%AZURE_CREDENTIALS:1%' -C '%AZURE_CREDENTIALS:2%' -S '%AZURE_CREDENTIALS:3%' -t '%AZURE_CREDENTIALS:4%'",
+         "attribute" : null,
+         "calculate_rate" : "no",
+         "cascaded_from" : null,
+         "check_attempts" : "3",
+         "check_freshness" : "0",
+         "check_interval" : "300",
+         "checktype" : {
+            "name" : "Active Plugin"
+         },
+         "critical_comparison" : null,
+         "critical_value" : null,
+         "dependencies" : [],
+         "description" : "The number of bytes written by the VM",
+         "event_handler" : "",
+         "event_handler_always_exec" : "0",
+         "flap_detection_enabled" : "1",
+         "freshness_type" : "renotify",
+         "invertresults" : "0",
+         "keywords" : [],
+         "label" : null,
+         "level" : 0,
+         "markdown_filter" : "0",
+         "name" : "Azure - VM - Bytes Written",
+         "notification_interval" : null,
+         "notification_options" : "w,c,r,u,f",
+         "oid" : null,
+         "plugin" : {
+            "name" : "check_azure.py"
+         },
+         "retry_check_interval" : "60",
+         "sensitive_arguments" : "1",
+         "servicegroup" : {
+            "name" : "Cloud - Azure - Virtual Machines"
+         },
+         "snmptraprules" : [],
+         "stale_state" : "0",
+         "stale_text" : "",
+         "stale_threshold_seconds" : "3600",
+         "stalking" : "",
+         "volatile" : "0",
+         "warning_comparison" : null,
+         "warning_value" : null
+      },
+      {
+         "alert_from_failure" : "1",
+         "args" : "-H $HOSTADDRESS$ -m VM.NetworkIn -r '%AZURE_CREDENTIALS%' -s '%AZURE_CREDENTIALS:1%' -C '%AZURE_CREDENTIALS:2%' -S '%AZURE_CREDENTIALS:3%' -t '%AZURE_CREDENTIALS:4%'",
+         "attribute" : null,
+         "calculate_rate" : "no",
+         "cascaded_from" : null,
+         "check_attempts" : "3",
+         "check_freshness" : "0",
+         "check_interval" : "300",
+         "checktype" : {
+            "name" : "Active Plugin"
+         },
+         "critical_comparison" : null,
+         "critical_value" : null,
+         "dependencies" : [],
+         "description" : "The number of bytes received by the VM",
+         "event_handler" : "",
+         "event_handler_always_exec" : "0",
+         "flap_detection_enabled" : "1",
+         "freshness_type" : "renotify",
+         "invertresults" : "0",
+         "keywords" : [],
+         "label" : null,
+         "level" : 0,
+         "markdown_filter" : "0",
+         "name" : "Azure - VM - Network In",
+         "notification_interval" : null,
+         "notification_options" : "w,c,r,u,f",
+         "oid" : null,
+         "plugin" : {
+            "name" : "check_azure.py"
+         },
+         "retry_check_interval" : "60",
+         "sensitive_arguments" : "1",
+         "servicegroup" : {
+            "name" : "Cloud - Azure - Virtual Machines"
+         },
+         "snmptraprules" : [],
+         "stale_state" : "0",
+         "stale_text" : "",
+         "stale_threshold_seconds" : "3600",
+         "stalking" : "",
+         "volatile" : "0",
+         "warning_comparison" : null,
+         "warning_value" : null
+      },
+      {
+         "alert_from_failure" : "1",
+         "args" : "-H $HOSTADDRESS$ -m VM.NetworkOut -r '%AZURE_CREDENTIALS%' -s '%AZURE_CREDENTIALS:1%' -C '%AZURE_CREDENTIALS:2%' -S '%AZURE_CREDENTIALS:3%' -t '%AZURE_CREDENTIALS:4%'",
+         "attribute" : null,
+         "calculate_rate" : "no",
+         "cascaded_from" : null,
+         "check_attempts" : "3",
+         "check_freshness" : "0",
+         "check_interval" : "300",
+         "checktype" : {
+            "name" : "Active Plugin"
+         },
+         "critical_comparison" : null,
+         "critical_value" : null,
+         "dependencies" : [],
+         "description" : "The number of bytes sent by the VM",
+         "event_handler" : "",
+         "event_handler_always_exec" : "0",
+         "flap_detection_enabled" : "1",
+         "freshness_type" : "renotify",
+         "invertresults" : "0",
+         "keywords" : [],
+         "label" : null,
+         "level" : 0,
+         "markdown_filter" : "0",
+         "name" : "Azure - VM - Network Out",
+         "notification_interval" : null,
+         "notification_options" : "w,c,r,u,f",
+         "oid" : null,
+         "plugin" : {
+            "name" : "check_azure.py"
+         },
+         "retry_check_interval" : "60",
+         "sensitive_arguments" : "1",
+         "servicegroup" : {
+            "name" : "Cloud - Azure - Virtual Machines"
+         },
+         "snmptraprules" : [],
+         "stale_state" : "0",
+         "stale_text" : "",
+         "stale_threshold_seconds" : "3600",
+         "stalking" : "",
+         "volatile" : "0",
+         "warning_comparison" : null,
+         "warning_value" : null
+      },
+      {
+         "alert_from_failure" : "1",
+         "args" : "-H $HOSTADDRESS$ -w 70 -c 90 -m VM.PercentageCPU -r '%AZURE_CREDENTIALS%' -s '%AZURE_CREDENTIALS:1%' -C '%AZURE_CREDENTIALS:2%' -S '%AZURE_CREDENTIALS:3%' -t '%AZURE_CREDENTIALS:4%'",
+         "attribute" : null,
+         "calculate_rate" : null,
+         "cascaded_from" : null,
+         "check_attempts" : "3",
+         "check_freshness" : "0",
+         "check_interval" : "300",
+         "checktype" : {
+            "name" : "Active Plugin"
+         },
+         "critical_comparison" : null,
+         "critical_value" : null,
+         "dependencies" : [],
+         "description" : "Monitor the CPU percentage usage",
+         "event_handler" : "",
+         "event_handler_always_exec" : "0",
+         "flap_detection_enabled" : "1",
+         "freshness_type" : "renotify",
+         "invertresults" : "0",
+         "keywords" : [],
+         "label" : null,
+         "level" : 0,
+         "markdown_filter" : "0",
+         "name" : "Azure - VM - Percentage CPU",
+         "notification_interval" : null,
+         "notification_options" : "w,c,r,u,f",
+         "oid" : null,
+         "plugin" : {
+            "name" : "check_azure.py"
+         },
+         "retry_check_interval" : "60",
+         "sensitive_arguments" : "1",
+         "servicegroup" : {
+            "name" : "Cloud - Azure - Virtual Machines"
+         },
+         "snmptraprules" : [],
+         "stale_state" : "0",
+         "stale_text" : "",
+         "stale_threshold_seconds" : "3600",
+         "stalking" : "",
+         "volatile" : "0",
+         "warning_comparison" : null,
+         "warning_value" : null
+      }
+   ],
+   "servicegroup" : [
+      {
+         "name" : "Cloud - Azure - Virtual Machines"
+      }
+   ]
+}
