@@ -27,20 +27,23 @@ In order for the Opspack to run, you will need to have these packages installed 
 
 If a cryptography error occurs when trying to install the Azure packages, you can run the commands which should fix the problem.
 
-**Ubuntu**
+**Debian and Ubuntu**
 
-```apt-get install build-essential libssl-dev libffi-dev python-dev```
+```sudo apt-get install build-essential libssl-dev libffi-dev python-dev python-pip```
 
-**Centos**
+**CentOS and RHEL**
 
-```yum install gcc libffi-devel python-devel openssl-devel```
+```sudo yum install gcc libffi-devel python-devel openssl-devel python-pip```
+
+**Common**
+When python-pip is installed, you can then run:
 ```
-sudo apt-get install python-pip
-pip install requests
-pip install nagiosplugin
-pip install azure
-pip install azure.monitor
-pip install azure.mgmt
+sudo pip install --upgrade pip==9.0.2
+sudo pip install --upgrade setuptools
+sudo pip install --upgrade requests
+sudo pip install nagiosplugin
+sudo pip install azure
+sudo pip install azure-monitor
 ```
 
 ## Setup and Configuration
